@@ -1,3 +1,37 @@
+type GenerateHomeContent = () => void;
+export const generateHomeContent: GenerateHomeContent = () => {
+  const CONTENT = document.querySelector("div#content") as HTMLElement;
+  const CONTAINER = document.createElement("div");
+  const BANNER = document.createElement("div");
+  const INTRODUCTION = document.createElement("div");
+  const BUSINESS_HOURS = document.createElement("div");
+  const LOCATION = document.createElement("div");
+  const CONTAINER_CHILDREN: HTMLElement[] = [
+    BANNER, INTRODUCTION, BUSINESS_HOURS, LOCATION,
+  ];
+
+  CONTAINER.setAttribute("class", "home");
+  BANNER.textContent = "Beary's Breakfast Bar";
+  INTRODUCTION.textContent = `
+    Beary's has the best porridge! The atmosphere and customer service make you feel like you are sitting in the middle of the woods, eating like a bear! This is exactly the kind of place that I like to return to again and again.
+
+    Goldilocks
+  `;
+  LOCATION.textContent = `
+    Location
+      123 Forest Drive, Forestville, Maine
+  `;
+
+  // Append each item of CONTAINER_CHILDREN to CONTAINER
+  for (let i = 0; i < CONTAINER_CHILDREN.length; i += 1) {
+    CONTAINER.appendChild(CONTAINER_CHILDREN[i]);
+  }
+
+  CONTENT.appendChild(CONTAINER);
+  // Append each item of CONTAINER_CHILDREN to CONTAINER
+  generateHoursContent();
+};
+
 // Generate Opening Hours in a tidy format
 type GenerateHours = () => void;
 export const generateHoursContent = () => {

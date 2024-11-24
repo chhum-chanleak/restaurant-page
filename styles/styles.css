@@ -12,3 +12,13 @@ body {
   flex-direction: column;
   gap: 4rem;
 }
+
+header {
+  padding: 1rem;
+
+  & > nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

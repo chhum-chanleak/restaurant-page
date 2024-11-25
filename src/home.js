@@ -66,5 +66,4 @@ export const generateHoursContent = () => {
                 break;
         }
     }
-    console.log(HOURS_DIV.textContent);
 };

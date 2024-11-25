@@ -33,8 +33,8 @@ export const generateHomeContent: GenerateHomeContent = () => {
 };
 
 // Generate Opening Hours in a tidy format
-type GenerateHours = () => void;
-export const generateHoursContent = () => {
+type GenerateHoursContent = () => void;
+export const generateHoursContent:GenerateHoursContent = () => {
   const HOURS_DIV = document.querySelector(".home > div:nth-child(3)") as HTMLElement;
 
   for (let i = 0; i < 9; i += 1) {

@@ -7,7 +7,6 @@ interface MenuOrder {
   description: string,
   price: number;
   getDescription(): string;
-  createOrderTypeBanner(): HTMLElement;
   createOrderInfo(): HTMLElement;
   createOrderTypeContainer(): HTMLElement;
 }
@@ -19,15 +18,6 @@ class Beverage implements MenuOrder {
 
   public getDescription(): string {
     return `Drink: ${this.name}, ${this.description} $${this.price}`;
-  }
-
-  public createOrderTypeBanner(): HTMLElement {
-    const BANNER = document.createElement("div");
-
-    BANNER.setAttribute("class", "banner");
-    BANNER.textContent = "Beverages";
-
-    return BANNER;
   }
 
   public createOrderInfo(): HTMLElement {
@@ -55,7 +45,7 @@ class Beverage implements MenuOrder {
 
     ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
 
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
 
     return ORDER_TYPE_CONTAINER;
   }
@@ -69,15 +59,6 @@ class MainDish implements MenuOrder {
     return `Dish: ${this.name}, Price: $${this.price}`;
   }
 
-  public createOrderTypeBanner(): HTMLElement {
-    const BANNER = document.createElement("div");
-
-    BANNER.setAttribute("class", "banner");
-    BANNER.textContent = "Beverages";
-
-    return BANNER;
-  }
-
   public createOrderInfo(): HTMLElement {
     const INFO_CONTAINER = document.createElement("div");
     const INFO_Order_NAME = document.createElement("h2");
@@ -103,7 +84,7 @@ class MainDish implements MenuOrder {
 
     ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
 
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
 
     return ORDER_TYPE_CONTAINER;
   }
@@ -117,15 +98,6 @@ class SideDish implements MenuOrder {
     return `Dish: ${this.name}, Price: $${this.price}`;
   }
 
-  public createOrderTypeBanner(): HTMLElement {
-    const BANNER = document.createElement("div");
-
-    BANNER.setAttribute("class", "banner");
-    BANNER.textContent = "Beverages";
-
-    return BANNER;
-  }
-
   public createOrderInfo(): HTMLElement {
     const INFO_CONTAINER = document.createElement("div");
     const INFO_Order_NAME = document.createElement("h2");
@@ -151,7 +123,7 @@ class SideDish implements MenuOrder {
 
     ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
 
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
 
     return ORDER_TYPE_CONTAINER;
   }
@@ -172,7 +144,6 @@ class MenuOrderFactory {
     }
   }
 }
-
 
 // functions
 

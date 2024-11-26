@@ -8,3 +8,11 @@ export const createMainBanner: CreateMainBanner = (description) =>  {
 
   return MAIN_BANNER;
 };
+
+// Append a list of child elements to a parent element
+type AppendChildNodes = (parent: HTMLElement, ...childNodes: HTMLElement[]) => void;
+export const appendChildNodes: AppendChildNodes = (parent, ...childNodes) => {
+  for (let i = 0; i < childNodes.length; i += 1) {
+    parent.appendChild(childNodes[i]);
+  }
+};

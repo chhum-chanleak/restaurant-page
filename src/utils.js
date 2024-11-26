@@ -4,3 +4,8 @@ export const createMainBanner = (description) => {
     MAIN_BANNER.textContent = `${description}`;
     return MAIN_BANNER;
 };
+export const appendChildNodes = (parent, ...childNodes) => {
+    for (let i = 0; i < childNodes.length; i += 1) {
+        parent.appendChild(childNodes[i]);
+    }
+};

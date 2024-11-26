@@ -14,12 +14,6 @@ class Beverage {
     getDescription() {
         return `Drink: ${this.name}, ${this.description} $${this.price}`;
     }
-    createOrderTypeBanner() {
-        const BANNER = document.createElement("div");
-        BANNER.setAttribute("class", "banner");
-        BANNER.textContent = "Beverages";
-        return BANNER;
-    }
     createOrderInfo() {
         const INFO_CONTAINER = document.createElement("div");
         const INFO_ORDER_NAME = document.createElement("h2");
@@ -39,7 +33,7 @@ class Beverage {
     createOrderTypeContainer() {
         const ORDER_TYPE_CONTAINER = document.createElement("div");
         ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
         return ORDER_TYPE_CONTAINER;
     }
 }
@@ -56,12 +50,6 @@ class MainDish {
     getDescription() {
         return `Dish: ${this.name}, Price: $${this.price}`;
     }
-    createOrderTypeBanner() {
-        const BANNER = document.createElement("div");
-        BANNER.setAttribute("class", "banner");
-        BANNER.textContent = "Beverages";
-        return BANNER;
-    }
     createOrderInfo() {
         const INFO_CONTAINER = document.createElement("div");
         const INFO_Order_NAME = document.createElement("h2");
@@ -81,7 +69,7 @@ class MainDish {
     createOrderTypeContainer() {
         const ORDER_TYPE_CONTAINER = document.createElement("div");
         ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
         return ORDER_TYPE_CONTAINER;
     }
 }
@@ -98,12 +86,6 @@ class SideDish {
     getDescription() {
         return `Dish: ${this.name}, Price: $${this.price}`;
     }
-    createOrderTypeBanner() {
-        const BANNER = document.createElement("div");
-        BANNER.setAttribute("class", "banner");
-        BANNER.textContent = "Beverages";
-        return BANNER;
-    }
     createOrderInfo() {
         const INFO_CONTAINER = document.createElement("div");
         const INFO_Order_NAME = document.createElement("h2");
@@ -123,7 +105,7 @@ class SideDish {
     createOrderTypeContainer() {
         const ORDER_TYPE_CONTAINER = document.createElement("div");
         ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderTypeBanner(), this.createOrderInfo());
+        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
         return ORDER_TYPE_CONTAINER;
     }
 }

@@ -1,5 +1,6 @@
 import dinosaur from "../asset/images/dinosaur.png";
 import { generateHomeContent } from "./home";
+import "../styles/styles.css";
 
 const handleButtons = () => {
   const home = document.querySelector("header > nav > button:nth-child(1)") as HTMLElement;

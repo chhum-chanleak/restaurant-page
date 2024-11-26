@@ -1,4 +1,5 @@
 import { generateHomeContent } from "./home";
+import "../styles/styles.css";
 const handleButtons = () => {
     const home = document.querySelector("header > nav > button:nth-child(1)");
     const menu = document.querySelector("header > nav > button:nth-child(2)");

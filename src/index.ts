@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-console.log("Hello, world!");
+import { generateHomeContent } from "./home";
 
 type GenerateContent = () => void;
 const generateContent:GenerateContent = () => {
@@ -15,7 +15,13 @@ const generateContent:GenerateContent = () => {
   content.appendChild(img);
   content.appendChild(p);
   content.appendChild(h1);
-  console.log(dinosaur);
 };
 
-generateContent();
+const handleButtons = () => {
+  const home = document.querySelector("header > nav > button:nth-child(1)") as HTMLElement;
+  const menu = document.querySelector("header > nav > button:nth-child(2)") as HTMLElement;
+  const about = document.querySelector("header > nav > button:nth-child(3)") as HTMLElement;
+  home.addEventListener("click", generateHomeContent);
+};
+
+handleButtons();

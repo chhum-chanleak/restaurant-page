@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-import { appendChildNodes } from "./utils";
+import { createMainBanner, appendChildNodes } from "./utils";
 // Create concrete classes for each type of menu Order
 class Beverage {
     name;
@@ -142,3 +142,12 @@ class MenuOrderFactory {
         }
     }
 }
+export const generateMenuContent = () => {
+    const CONTENT = document.querySelector("div#content");
+    const MENU_CONTAINER = document.createElement("div");
+    const MAIN_BANNER = createMainBanner("Menu");
+    MENU_CONTAINER.setAttribute("class", "menu");
+    MENU_CONTAINER.appendChild(MAIN_BANNER);
+    // Order type container
+    CONTENT.appendChild(MENU_CONTAINER);
+};

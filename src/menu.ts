@@ -172,3 +172,19 @@ class MenuOrderFactory {
     }
   }
 }
+
+
+// functions
+
+// Generate content for menu
+type GenerateMenuContent = () => void;
+export const generateMenuContent: GenerateMenuContent = () => {
+  const CONTENT = document.querySelector("div#content") as HTMLElement;
+  const MENU_CONTAINER = document.createElement("div");
+  const MAIN_BANNER = createMainBanner("Menu");
+
+  MENU_CONTAINER.setAttribute("class", "menu");
+  MENU_CONTAINER.appendChild(MAIN_BANNER);
+  // Order type container
+  CONTENT.appendChild(MENU_CONTAINER);
+};

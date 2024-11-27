@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-import { createMainBanner, appendChildNodes } from "./utils";
+import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner } from "./utils";
 // Create concrete classes for each type of menu Order
 class Beverage {
     name;
@@ -116,18 +116,6 @@ export const generateMenuContent = () => {
     // Order type container
     appendChildNodes(CONTENT, MENU_CONTAINER);
     appendChildNodes(MENU_CONTAINER, MAIN_BANNER, BEVERAGES_CONTAINER);
-};
-const createOrderTypeBanner = (bannerName) => {
-    const BANNER = document.createElement("div");
-    BANNER.setAttribute("class", "banner");
-    BANNER.textContent = `${bannerName}`;
-    return BANNER;
-};
-const createOrderTypeContainer = (...childElement) => {
-    const ORDER_TYPE_CONTAINER = document.createElement("div");
-    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-    appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
-    return ORDER_TYPE_CONTAINER;
 };
 const HONEY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2);
 const BEARY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3);

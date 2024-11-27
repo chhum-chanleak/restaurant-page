@@ -30,12 +30,6 @@ class Beverage {
         appendChildNodes(INFO_CONTAINER, INFO_ORDER_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;
     }
-    createOrderTypeContainer() {
-        const ORDER_TYPE_CONTAINER = document.createElement("div");
-        ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-        return ORDER_TYPE_CONTAINER;
-    }
 }
 class MainDish {
     name;
@@ -66,12 +60,6 @@ class MainDish {
         appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;
     }
-    createOrderTypeContainer() {
-        const ORDER_TYPE_CONTAINER = document.createElement("div");
-        ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-        return ORDER_TYPE_CONTAINER;
-    }
 }
 class SideDish {
     name;
@@ -101,12 +89,6 @@ class SideDish {
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
         appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;
-    }
-    createOrderTypeContainer() {
-        const ORDER_TYPE_CONTAINER = document.createElement("div");
-        ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-        appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-        return ORDER_TYPE_CONTAINER;
     }
 }
 // Factory

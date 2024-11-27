@@ -8,7 +8,6 @@ interface MenuOrder {
   price: number;
   getDescription(): string;
   createOrderInfo(): HTMLElement;
-  createOrderTypeContainer(): HTMLElement;
 }
 
 // Create concrete classes for each type of menu Order
@@ -39,16 +38,6 @@ class Beverage implements MenuOrder {
 
     return INFO_CONTAINER;
   }
-
-  public createOrderTypeContainer(): HTMLElement {
-    const ORDER_TYPE_CONTAINER = document.createElement("div");
-
-    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-
-    return ORDER_TYPE_CONTAINER;
-  }
 }
 
 class MainDish implements MenuOrder {
@@ -78,16 +67,6 @@ class MainDish implements MenuOrder {
 
     return INFO_CONTAINER;
   }
-
-  public createOrderTypeContainer(): HTMLElement {
-    const ORDER_TYPE_CONTAINER = document.createElement("div");
-
-    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-
-    return ORDER_TYPE_CONTAINER;
-  }
 }
 
 class SideDish implements MenuOrder {
@@ -116,16 +95,6 @@ class SideDish implements MenuOrder {
     appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
 
     return INFO_CONTAINER;
-  }
-
-  public createOrderTypeContainer(): HTMLElement {
-    const ORDER_TYPE_CONTAINER = document.createElement("div");
-
-    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-
-    appendChildNodes(ORDER_TYPE_CONTAINER, this.createOrderInfo());
-
-    return ORDER_TYPE_CONTAINER;
   }
 }
 

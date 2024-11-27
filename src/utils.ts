@@ -54,11 +54,38 @@ export const getNames:GetNames = (arrayOfObjects) => {
 };
 
 // Get orders by type
-const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
-  for (let i = 0; i < arrayOfObjects.length; i += 1) {
-    switch (arrayOfObjects[i].name) {
-      case '':
+export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
+  const BEVERAGE: MenuOrder[] = [];
+  const SIDE_DISHES: MenuOrder[] = [];
+  const MAIN_DISHES: MenuOrder[] = [];
 
+  for (let i = 0; i < arrayOfObjects.length; i += 1) {
+    switch (arrayOfObjects[i].name) {      
+      case 'Honey Tea':
+      case 'Beary Tea':
+        
+        BEVERAGE.push(arrayOfObjects[i]);
+        break;
+      case 'Pancakes':
+      case 'French Toast':
+        SIDE_DISHES.push(arrayOfObjects[i]);
+        break;
+      case 'Beary Veggie Sandwich':
+      case 'BLT':
+      case 'Bagel and Lox':
+      case 'Honeycomb':
+      case 'Beary Bowl':
+      case 'The Beary Best Porridge':
+        MAIN_DISHES.push(arrayOfObjects[i]);
+        break;
+      default:
+        throw new Error(`Unknown order ${arrayOfObjects[i]}`);
     }
   }
+
+  return {
+    BEVERAGE,
+    SIDE_DISHES,
+    MAIN_DISHES,
+  };
 };

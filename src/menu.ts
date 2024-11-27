@@ -122,11 +122,13 @@ export const generateMenuContent: GenerateMenuContent = () => {
   const CONTENT = document.querySelector("div#content") as HTMLElement;
   const MENU_CONTAINER = document.createElement("div");
   const MAIN_BANNER = createMainBanner("Menu");
+  const BEVERAGES_CONTAINER = createOrderTypeContainer(createOrderTypeBanner("Beverages"), HONEY_TEA.createOrderInfo(), BEARY_TEA.createOrderInfo());
 
   MENU_CONTAINER.setAttribute("class", "menu");
   MENU_CONTAINER.appendChild(MAIN_BANNER);
   // Order type container
-  CONTENT.appendChild(MENU_CONTAINER);
+  appendChildNodes(CONTENT, MENU_CONTAINER);
+  appendChildNodes(MENU_CONTAINER, MAIN_BANNER, BEVERAGES_CONTAINER);
 };
 
 // Create a div with a text content of 'bannerName'

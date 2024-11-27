@@ -41,6 +41,18 @@ export const createOrderTypeContainer: CreateOrderTypeContainer = (...childEleme
   return ORDER_TYPE_CONTAINER;
 }
 
+// Get all names from 'ORDERS'
+type GetNames = (arrayOfObjects: MenuOrder[]) => string[];
+export const getNames:GetNames = (arrayOfObjects) => {
+  const NAMES: string[] = [];
+
+  for (let i = 0; i < arrayOfObjects.length; i += 1) {
+    NAMES.push(arrayOfObjects[i].name);
+  }
+
+  return NAMES;
+};
+
 // Get orders by type
 const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
   for (let i = 0; i < arrayOfObjects.length; i += 1) {

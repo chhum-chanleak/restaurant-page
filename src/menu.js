@@ -23,7 +23,7 @@ class Beverage {
         const IMAGE = document.createElement("img");
         INFO_CONTAINER.setAttribute("class", "beverage-info");
         INFO_ORDER_NAME.textContent = `${this.name}`;
-        DESCRIPTION_TEXT.textContent = `A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!`;
+        DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
         IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
@@ -53,7 +53,7 @@ class MainDish {
         const IMAGE = document.createElement("img");
         INFO_CONTAINER.setAttribute("class", "beverage-info");
         INFO_Order_NAME.textContent = `${this.name}`;
-        DESCRIPTION_TEXT.textContent = `A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!`;
+        DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
         IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
@@ -83,7 +83,7 @@ class SideDish {
         const IMAGE = document.createElement("img");
         INFO_CONTAINER.setAttribute("class", "beverage-info");
         INFO_Order_NAME.textContent = `${this.name}`;
-        DESCRIPTION_TEXT.textContent = `A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!`;
+        DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
         IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);

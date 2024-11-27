@@ -2,7 +2,7 @@ import dinosaur from "../asset/images/dinosaur.png";
 import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner } from "./utils";
 
 // Define a common interface for all Orders
-interface MenuOrder {
+export interface MenuOrder {
   name: string;
   description: string,
   price: number;

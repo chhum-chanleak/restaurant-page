@@ -37,11 +37,11 @@ export const getOrdersByType = (arrayOfObjects) => {
         switch (arrayOfObjects[i].name) {
             case 'Honey Tea':
             case 'Beary Tea':
-                BEVERAGE.push(arrayOfObjects[i]);
+                BEVERAGE.push(arrayOfObjects[i].createOrderInfo());
                 break;
             case 'Pancakes':
             case 'French Toast':
-                SIDE_DISHES.push(arrayOfObjects[i]);
+                SIDE_DISHES.push(arrayOfObjects[i].createOrderInfo());
                 break;
             case 'Beary Veggie Sandwich':
             case 'BLT':
@@ -49,7 +49,7 @@ export const getOrdersByType = (arrayOfObjects) => {
             case 'Honeycomb':
             case 'Beary Bowl':
             case 'The Beary Best Porridge':
-                MAIN_DISHES.push(arrayOfObjects[i]);
+                MAIN_DISHES.push(arrayOfObjects[i].createOrderInfo());
                 break;
             default:
                 throw new Error(`Unknown order ${arrayOfObjects[i]}`);

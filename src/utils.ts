@@ -55,20 +55,20 @@ export const getNames:GetNames = (arrayOfObjects) => {
 
 // Get orders by type
 export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
-  const BEVERAGE: MenuOrder[] = [];
-  const SIDE_DISHES: MenuOrder[] = [];
-  const MAIN_DISHES: MenuOrder[] = [];
+  const BEVERAGE: HTMLElement[] = [];
+  const SIDE_DISHES: HTMLElement[] = [];
+  const MAIN_DISHES: HTMLElement[] = [];
 
   for (let i = 0; i < arrayOfObjects.length; i += 1) {
     switch (arrayOfObjects[i].name) {      
       case 'Honey Tea':
       case 'Beary Tea':
         
-        BEVERAGE.push(arrayOfObjects[i]);
+        BEVERAGE.push(arrayOfObjects[i].createOrderInfo());
         break;
       case 'Pancakes':
       case 'French Toast':
-        SIDE_DISHES.push(arrayOfObjects[i]);
+        SIDE_DISHES.push(arrayOfObjects[i].createOrderInfo());
         break;
       case 'Beary Veggie Sandwich':
       case 'BLT':
@@ -76,7 +76,7 @@ export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) 
       case 'Honeycomb':
       case 'Beary Bowl':
       case 'The Beary Best Porridge':
-        MAIN_DISHES.push(arrayOfObjects[i]);
+        MAIN_DISHES.push(arrayOfObjects[i].createOrderInfo());
         break;
       default:
         throw new Error(`Unknown order ${arrayOfObjects[i]}`);

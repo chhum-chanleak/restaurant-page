@@ -21,13 +21,6 @@ export const createOrderTypeContainer = (...childElement) => {
     appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
     return ORDER_TYPE_CONTAINER;
 };
-export const getNames = (arrayOfObjects) => {
-    const NAMES = [];
-    for (let i = 0; i < arrayOfObjects.length; i += 1) {
-        NAMES.push(arrayOfObjects[i].name);
-    }
-    return NAMES;
-};
 // Get orders by type
 export const getOrdersByType = (arrayOfObjects) => {
     const BEVERAGE = [];

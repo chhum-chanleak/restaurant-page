@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner } from "./utils";
+import { createMainBanner, appendChildNodes } from "./utils";
 // Create concrete classes for each type of menu Order
 class Beverage {
     name;
@@ -110,12 +110,10 @@ export const generateMenuContent = () => {
     const CONTENT = document.querySelector("div#content");
     const MENU_CONTAINER = document.createElement("div");
     const MAIN_BANNER = createMainBanner("Menu");
-    const BEVERAGES_CONTAINER = createOrderTypeContainer(createOrderTypeBanner("Beverages"), HONEY_TEA.createOrderInfo(), BEARY_TEA.createOrderInfo());
     MENU_CONTAINER.setAttribute("class", "menu");
     MENU_CONTAINER.appendChild(MAIN_BANNER);
     // Order type container
     appendChildNodes(CONTENT, MENU_CONTAINER);
-    appendChildNodes(MENU_CONTAINER, MAIN_BANNER, BEVERAGES_CONTAINER);
 };
 const ORDERS = [
     MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2),

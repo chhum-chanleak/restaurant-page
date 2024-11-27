@@ -122,11 +122,22 @@ export const generateMenuContent: GenerateMenuContent = () => {
   const CONTENT = document.querySelector("div#content") as HTMLElement;
   const MENU_CONTAINER = document.createElement("div");
   const MAIN_BANNER = createMainBanner("Menu");
+  const BEVERAGE_CONTAINER = document.createElement("div");
+  const SIDE_DISHES_CONTAINER = document.createElement("div");
+  const MAIN_DISHES_CONTAINER = document.createElement("div");
 
-  MENU_CONTAINER.setAttribute("class", "menu");
+  MENU_CONTAINER.setAttribute("class", "menu");  
   MENU_CONTAINER.appendChild(MAIN_BANNER);
-  // Order type container
+  BEVERAGE_CONTAINER.setAttribute("class", "beverage-container");
+  SIDE_DISHES_CONTAINER.setAttribute("class", "side-dishes-container");
+  MAIN_DISHES_CONTAINER.setAttribute("class", "main-dishes-container");
+
+  // Order type containers
   appendChildNodes(CONTENT, MENU_CONTAINER);
+  appendChildNodes(MENU_CONTAINER, BEVERAGE_CONTAINER, SIDE_DISHES_CONTAINER, MAIN_DISHES_CONTAINER);
+  appendChildNodes(BEVERAGE_CONTAINER, createOrderTypeBanner("Beverage"), ...getOrdersByType(ORDERS).BEVERAGE);
+  appendChildNodes(SIDE_DISHES_CONTAINER, createOrderTypeBanner("Side Dishes"), ...getOrdersByType(ORDERS).SIDE_DISHES);
+  appendChildNodes(MAIN_DISHES_CONTAINER, createOrderTypeBanner("Main Dishes"), ...getOrdersByType(ORDERS).MAIN_DISHES);
 };
 
 export const ORDERS = [

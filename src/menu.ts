@@ -133,3 +133,13 @@ export const generateMenuContent: GenerateMenuContent = () => {
 
 const HONEY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2);
 const BEARY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3);
+const TOAST_AND_JAM = MenuOrderFactory.createMenuOrder("side_dish", "Toast and Jam", "A slice of toast, your choice of bread, and our homemade blackberry or raspberry jam.", 1);
+const FRESH_FRUIT = MenuOrderFactory.createMenuOrder("side_dish", "Fresh Fruit", "A small bowl of fresh fruit, whatever we find at the market for the day.", 3);
+const PANCAKES = MenuOrderFactory.createMenuOrder("main_dish", "Pancakes", "A stack of homemade buttermilk pancakes, served with our locally sourced maple syrup.", 4);
+const FRENCH_TOAST = MenuOrderFactory.createMenuOrder("main_dish", "French Toast", "Two slices of the best french toast you will ever eat, served with our locally sourced maple syrup.", 5);
+const BEARY_VEGGIE_SANDWICH = MenuOrderFactory.createMenuOrder("main_dish", "Beary Veggie Sandwich", "Do you like vegetables? Then this is the sandwich for you! Stuffed full of a variety of fresh produce, it will fill you up.", 8);
+const BLT = MenuOrderFactory.createMenuOrder("main_dish", "BLT", "Interested in the Beary Veggie Sandwich but also love bacon? Say no more.", 6);
+const BAGEL_AND_LOX = MenuOrderFactory.createMenuOrder("main_dish", "Bagel and Lox", "Our house specialty, you can't go wrong with a hearty bagel topped with sustainably harvested salmon.", 8);
+const HONEYCOMB = MenuOrderFactory.createMenuOrder("main_dish", "Honeycomb", "Are you a bear like us? Then you will love our honeycomb. And, yes humans, it is just a piece of honeycomb, not the popular breakfast cereal.", 6);
+const BEARY_BOWL = MenuOrderFactory.createMenuOrder("main_dish", "Beary Bowl", "Get a big ole bowl of our berries! Side of honey is $1 extra.", 7);
+const THE_BEARY_BEST_PORRIDGE = MenuOrderFactory.createMenuOrder("main_dish","The Beary Best Porridge", "Made by Baby Bear himself, this porridge is guaranteed to be just right, or your money back.", 5);

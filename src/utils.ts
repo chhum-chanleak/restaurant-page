@@ -16,3 +16,25 @@ export const appendChildNodes: AppendChildNodes = (parent, ...childNodes) => {
     parent.appendChild(childNodes[i]);
   }
 };
+
+// Create a div with a text content of 'bannerName'
+type CreateOrderTypeBanner = (bannerName: string) => HTMLElement;
+export const createOrderTypeBanner: CreateOrderTypeBanner = (bannerName) => {
+  const BANNER = document.createElement("div");
+
+  BANNER.setAttribute("class", "banner");
+  BANNER.textContent = `${bannerName}`;
+
+  return BANNER;
+}
+
+// Create a container for a certain order type
+type CreateOrderTypeContainer = (...childElement: HTMLElement []) => HTMLElement;
+export const createOrderTypeContainer: CreateOrderTypeContainer = (...childElement) => {
+   const ORDER_TYPE_CONTAINER = document.createElement("div");
+
+   ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
+   appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
+
+   return ORDER_TYPE_CONTAINER;
+}

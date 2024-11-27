@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner, getNames, getOrdersByType } from "./utils";
+import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner, getOrdersByType } from "./utils";
 
 // Define a common interface for all Orders
 export interface MenuOrder {

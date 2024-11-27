@@ -115,7 +115,7 @@ export const generateMenuContent = () => {
     // Order type container
     appendChildNodes(CONTENT, MENU_CONTAINER);
 };
-const ORDERS = [
+export const ORDERS = [
     MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2),
     MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3),
     MenuOrderFactory.createMenuOrder("main_dish", "Pancakes", "A stack of homemade buttermilk pancakes, served with our locally sourced maple syrup.", 4),

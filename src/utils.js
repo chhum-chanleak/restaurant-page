@@ -9,3 +9,15 @@ export const appendChildNodes = (parent, ...childNodes) => {
         parent.appendChild(childNodes[i]);
     }
 };
+export const createOrderTypeBanner = (bannerName) => {
+    const BANNER = document.createElement("div");
+    BANNER.setAttribute("class", "banner");
+    BANNER.textContent = `${bannerName}`;
+    return BANNER;
+};
+export const createOrderTypeContainer = (...childElement) => {
+    const ORDER_TYPE_CONTAINER = document.createElement("div");
+    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
+    appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
+    return ORDER_TYPE_CONTAINER;
+};

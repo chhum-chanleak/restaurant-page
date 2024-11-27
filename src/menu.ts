@@ -140,5 +140,15 @@ const createOrderTypeBanner: CreateOrderTypeBanner = (bannerName) => {
   return BANNER;
 }
 
+type CreateOrderTypeContainer = (...childElement: HTMLElement []) => HTMLElement;
+const createOrderTypeContainer: CreateOrderTypeContainer = (...childElement) => {
+   const ORDER_TYPE_CONTAINER = document.createElement("div");
+
+   ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
+   appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
+
+   return ORDER_TYPE_CONTAINER;
+}
+
 const HONEY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2);
 const BEARY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3);

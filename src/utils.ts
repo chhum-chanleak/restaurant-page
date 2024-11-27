@@ -1,3 +1,5 @@
+import { MenuOrder, ORDERS } from "./menu";
+
 // Create main banner for content
 type CreateMainBanner = (description: string) => HTMLElement;
 export const createMainBanner: CreateMainBanner = (description) =>  {
@@ -31,10 +33,20 @@ export const createOrderTypeBanner: CreateOrderTypeBanner = (bannerName) => {
 // Create a container for a certain order type
 type CreateOrderTypeContainer = (...childElement: HTMLElement []) => HTMLElement;
 export const createOrderTypeContainer: CreateOrderTypeContainer = (...childElement) => {
-   const ORDER_TYPE_CONTAINER = document.createElement("div");
+  const ORDER_TYPE_CONTAINER = document.createElement("div");
 
-   ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-   appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
+  ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
+  appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
 
-   return ORDER_TYPE_CONTAINER;
+  return ORDER_TYPE_CONTAINER;
 }
+
+// Get orders by type
+const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
+  for (let i = 0; i < arrayOfObjects.length; i += 1) {
+    switch (arrayOfObjects[i].name) {
+      case '':
+
+    }
+  }
+};

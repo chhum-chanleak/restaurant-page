@@ -1,5 +1,5 @@
 import dinosaur from "../asset/images/dinosaur.png";
-import { createMainBanner, appendChildNodes } from "./utils";
+import { createMainBanner, appendChildNodes, createOrderTypeContainer, createOrderTypeBanner } from "./utils";
 
 // Define a common interface for all Orders
 interface MenuOrder {
@@ -130,27 +130,6 @@ export const generateMenuContent: GenerateMenuContent = () => {
   appendChildNodes(CONTENT, MENU_CONTAINER);
   appendChildNodes(MENU_CONTAINER, MAIN_BANNER, BEVERAGES_CONTAINER);
 };
-
-// Create a div with a text content of 'bannerName'
-type CreateOrderTypeBanner = (bannerName: string) => HTMLElement;
-const createOrderTypeBanner: CreateOrderTypeBanner = (bannerName) => {
-  const BANNER = document.createElement("div");
-
-  BANNER.setAttribute("class", "banner");
-  BANNER.textContent = `${bannerName}`;
-
-  return BANNER;
-}
-
-type CreateOrderTypeContainer = (...childElement: HTMLElement []) => HTMLElement;
-const createOrderTypeContainer: CreateOrderTypeContainer = (...childElement) => {
-   const ORDER_TYPE_CONTAINER = document.createElement("div");
-
-   ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-   appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
-
-   return ORDER_TYPE_CONTAINER;
-}
 
 const HONEY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2);
 const BEARY_TEA = MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3);

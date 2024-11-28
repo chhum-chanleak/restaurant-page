@@ -15,12 +15,6 @@ export const createOrderTypeBanner = (bannerName) => {
     BANNER.textContent = `${bannerName}`;
     return BANNER;
 };
-export const createOrderTypeContainer = (...childElement) => {
-    const ORDER_TYPE_CONTAINER = document.createElement("div");
-    ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-    appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
-    return ORDER_TYPE_CONTAINER;
-};
 // Get orders by type
 export const getOrdersByType = (arrayOfObjects) => {
     const BEVERAGE = [];

@@ -1,4 +1,4 @@
-import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType } from "./utils";
+import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType, getImgElementsByOrderType, addImagesToElements } from "./utils";
 
 // Define a common interface for all Orders
 export interface MenuOrder {

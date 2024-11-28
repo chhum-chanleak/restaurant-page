@@ -40,7 +40,6 @@ export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) 
     switch (arrayOfObjects[i].name) {      
       case 'Honey Tea':
       case 'Beary Tea':
-        
         BEVERAGE.push(arrayOfObjects[i].createOrderInfo());
         break;
       case 'Pancakes':
@@ -67,7 +66,6 @@ export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) 
   };
 };
 
-
 // Get img elements by inputting order type. Example: getImgElementsByOrderType("side_dish");
 type GetImgElementsByOrderType = (orderType: string) => NodeListOf<Element>;
 export const getImgElementsByOrderType: GetImgElementsByOrderType = (orderType) => {
@@ -78,13 +76,10 @@ export const getImgElementsByOrderType: GetImgElementsByOrderType = (orderType) 
   switch (orderType) {
     case 'beverage':
       return BEVERAGE_IMG_ELEMENTS;
-      break;
     case 'side_dishes':
       return SIDE_DISHES_IMG_ELEMENTS;
-      break;
     case 'main_dishes':
       return MAIN_DISHES_IMG_ELEMENTS;
-      break;
     default:
       throw new Error(`Unknown order type ${orderType}`);
   }

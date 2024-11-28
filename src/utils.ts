@@ -99,6 +99,8 @@ export const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) 
 
     if (imgElements.length === imgPaths.length) {
       imgElement.src = `${imgPaths[i]}`;
+    } else {
+      throw new Error(`The length of the first and second arguments are not equal! first: ${imgElements.length}   second: ${imgPaths.length}.`);
     }
   }
 };

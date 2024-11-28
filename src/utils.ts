@@ -30,17 +30,6 @@ export const createOrderTypeBanner: CreateOrderTypeBanner = (bannerName) => {
   return BANNER;
 }
 
-// Create a container for a certain order type
-type CreateOrderTypeContainer = (...childElement: HTMLElement []) => HTMLElement;
-export const createOrderTypeContainer: CreateOrderTypeContainer = (...childElement) => {
-  const ORDER_TYPE_CONTAINER = document.createElement("div");
-
-  ORDER_TYPE_CONTAINER.setAttribute("class", "order-type-container");
-  appendChildNodes(ORDER_TYPE_CONTAINER, ...childElement);
-
-  return ORDER_TYPE_CONTAINER;
-}
-
 // Get orders by type
 export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) => {
   const BEVERAGE: HTMLElement[] = [];

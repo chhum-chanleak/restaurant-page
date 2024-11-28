@@ -56,7 +56,7 @@ class MainDish implements MenuOrder {
     const INFO_PRICE = document.createElement("span");
     const IMAGE = document.createElement("img");
 
-    INFO_CONTAINER.setAttribute("class", "beverage-info");
+    INFO_CONTAINER.setAttribute("class", "main-dishes-info");
     INFO_Order_NAME.textContent = `${this.name}`;
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
@@ -84,7 +84,7 @@ class SideDish implements MenuOrder {
     const INFO_PRICE = document.createElement("span");
     const IMAGE = document.createElement("img");
 
-    INFO_CONTAINER.setAttribute("class", "beverage-info");
+    INFO_CONTAINER.setAttribute("class", "side-dishes-info");
     INFO_Order_NAME.textContent = `${this.name}`;
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
@@ -145,8 +145,8 @@ export const generateMenuContent: GenerateMenuContent = () => {
 export const ORDERS = [
   MenuOrderFactory.createMenuOrder("beverage", "Honey Tea", "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!", 2),
   MenuOrderFactory.createMenuOrder("beverage", "Beary Tea", "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries. Best served cold, but can be served hot on request.", 3),
-  MenuOrderFactory.createMenuOrder("main_dish", "Pancakes", "A stack of homemade buttermilk pancakes, served with our locally sourced maple syrup.", 4),
-  MenuOrderFactory.createMenuOrder("main_dish", "French Toast", "Two slices of the best french toast you will ever eat, served with our locally sourced maple syrup.", 5),
+  MenuOrderFactory.createMenuOrder("side_dish", "Pancakes", "A stack of homemade buttermilk pancakes, served with our locally sourced maple syrup.", 4),
+  MenuOrderFactory.createMenuOrder("side_dish", "French Toast", "Two slices of the best french toast you will ever eat, served with our locally sourced maple syrup.", 5),
   MenuOrderFactory.createMenuOrder("main_dish", "Beary Veggie Sandwich", "Do you like vegetables? Then this is the sandwich for you! Stuffed full of a variety of fresh produce, it will fill you up.", 8),
   MenuOrderFactory.createMenuOrder("main_dish", "BLT", "Interested in the Beary Veggie Sandwich but also love bacon? Say no more.", 6),
   MenuOrderFactory.createMenuOrder("main_dish", "Bagel and Lox", "Our house specialty, you can't go wrong with a hearty bagel topped with sustainably harvested salmon.", 8),

@@ -36,7 +36,7 @@ div#content {
     padding: 1rem;
     display: grid;
     gap: 4rem;
-    width: 60%;
+    width: 80%;
 
     & > div {
       border: 1px solid rgb(229, 229, 16);
@@ -44,9 +44,43 @@ div#content {
       text-align: center;
       border-radius: 4px;
     }
+  }
 
-    & > div:nth-child(3) > div:nth-child(1) {
+  & > .menu {
+    display: flex;
+    flex-direction: column;
+
+    & .main-banner {
+      border: 1px solid #000;
+      width: 20%;
+      min-width: 100px;
+      text-align: center;
+      margin: 0 auto;
       margin-bottom: 1rem;
+    }
+
+    & .beverage-container, .side-dishes-container, .main-dishes-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      border-bottom: 1px dashed #000;
+    }
+
+    .beverage-container > .banner, .side-dishes-container > .banner, .main-dishes-container > .banner {
+      border: 1px solid #000;
+      padding: 0.5rem;
+    }
+
+    & .beverage-info, .side-dishes-info, .main-dishes-info {
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      padding: 1rem;
+      text-indent: 20px;
     }
   }
 }

@@ -55,13 +55,10 @@ export const getImgElementsByOrderType = (orderType) => {
     switch (orderType) {
         case 'beverage':
             return BEVERAGE_IMG_ELEMENTS;
-            break;
         case 'side_dishes':
             return SIDE_DISHES_IMG_ELEMENTS;
-            break;
         case 'main_dishes':
             return MAIN_DISHES_IMG_ELEMENTS;
-            break;
         default:
             throw new Error(`Unknown order type ${orderType}`);
     }

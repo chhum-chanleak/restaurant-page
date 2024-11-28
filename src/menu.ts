@@ -1,4 +1,5 @@
 import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType, getImgElementsByOrderType, addImagesToElements } from "./utils";
+import { imagePaths } from "../asset/data/images";
 
 // Define a common interface for all Orders
 export interface MenuOrder {
@@ -135,6 +136,10 @@ export const generateMenuContent: GenerateMenuContent = () => {
   appendChildNodes(BEVERAGE_CONTAINER, createOrderTypeBanner("Beverage"), ...getOrdersByType(ORDERS).BEVERAGE);
   appendChildNodes(SIDE_DISHES_CONTAINER, createOrderTypeBanner("Side Dishes"), ...getOrdersByType(ORDERS).SIDE_DISHES);
   appendChildNodes(MAIN_DISHES_CONTAINER, createOrderTypeBanner("Main Dishes"), ...getOrdersByType(ORDERS).MAIN_DISHES);
+
+  addImagesToElements(getImgElementsByOrderType("beverage"), [imagePaths.HONEY_TEA, imagePaths.BEARY_TEA]);
+  addImagesToElements(getImgElementsByOrderType("side_dishes"), [imagePaths.PANCAKES, imagePaths.FRENCH_TOAST]);
+  addImagesToElements(getImgElementsByOrderType("main_dishes"), [imagePaths.BEARY_VEGGIE_SANDWICH, imagePaths.BLT, imagePaths.BAGEL_AND_LOX, imagePaths.HONEYCOMB, imagePaths.BEARY_BOWL, imagePaths.THE_BEARY_BEST_PORRIDGE]);
 };
 
 export const ORDERS = [

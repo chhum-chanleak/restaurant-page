@@ -31,6 +31,7 @@ class Beverage implements MenuOrder {
     INFO_ORDER_NAME.textContent = `${this.name}`;
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
+    IMAGE.setAttribute("class", `${this.name}`);
     IMAGE.src = `${dinosaur}`;
 
     appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);

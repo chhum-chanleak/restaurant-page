@@ -72,10 +72,11 @@ export const getImgElementsByOrderType = (orderType) => {
             throw new Error(`Unknown order type ${orderType}`);
     }
 };
-const addImagesToElements = (imgElements, imgPaths) => {
+export const addImagesToElements = (imgElements, imgPaths) => {
     for (let i = 0; i < imgElements.length; i += 1) {
+        const imgElement = imgElements[i];
         if (imgElements.length === imgPaths.length) {
-            imgElements[i].src = `${imgPaths[i]}`;
+            imgElement.src = `${imgPaths[i]}`;
         }
     }
 };

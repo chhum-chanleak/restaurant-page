@@ -102,12 +102,14 @@ export const getImgElementsByOrderType: GetImgElementsByOrderType = (orderType) 
 };
 
 // Add images to elements
-type AddImagesToElements = (imgElements: HTMLImageElement[], imagePaths: number[]) => void;
-const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) => {
+type AddImagesToElements = (imgElements: NodeListOf<Element>, imagePaths: number[]) => void;
+export const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) => {
 
   for (let i = 0; i < imgElements.length; i += 1) {
+    const imgElement = imgElements[i] as HTMLImageElement;
+
     if (imgElements.length === imgPaths.length) {
-      imgElements[i].src = `${imgPaths[i]}`;
+      imgElement.src = `${imgPaths[i]}`;
     }
   }
 };

@@ -1,4 +1,4 @@
-import { MenuOrder, ORDERS } from "./menu";
+import { MenuOrder } from "./menu";
 
 // Create main banner for content
 type CreateMainBanner = (description: string) => HTMLElement;

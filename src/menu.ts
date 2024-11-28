@@ -1,4 +1,3 @@
-import dinosaur from "../asset/images/dinosaur.png";
 import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType } from "./utils";
 
 // Define a common interface for all Orders
@@ -32,7 +31,6 @@ class Beverage implements MenuOrder {
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
     IMAGE.setAttribute("class", `${this.name}`);
-    IMAGE.src = `${dinosaur}`;
 
     appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
     appendChildNodes(INFO_CONTAINER, INFO_ORDER_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
@@ -61,7 +59,6 @@ class MainDish implements MenuOrder {
     INFO_Order_NAME.textContent = `${this.name}`;
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
-    IMAGE.src = `${dinosaur}`;
 
     appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
     appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
@@ -90,7 +87,6 @@ class SideDish implements MenuOrder {
     INFO_Order_NAME.textContent = `${this.name}`;
     DESCRIPTION_TEXT.textContent = `${this.description}`;
     INFO_PRICE.textContent = `$${this.price}`;
-    IMAGE.src = `${dinosaur}`;
 
     appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
     appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);

@@ -54,3 +54,10 @@ export const getOrdersByType = (arrayOfObjects) => {
         MAIN_DISHES,
     };
 };
+const addImagesToElements = (imgElements, imgPaths) => {
+    for (let i = 0; i < imgElements.length; i += 1) {
+        if (imgElements.length === imgPaths.length) {
+            imgElements[i].src = `${imgPaths[i]}`;
+        }
+    }
+};

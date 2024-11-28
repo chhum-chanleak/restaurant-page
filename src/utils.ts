@@ -77,3 +77,14 @@ export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) 
     MAIN_DISHES,
   };
 };
+
+// Add images to elements
+type AddImagesToElements = (imgElements: HTMLImageElement[], imagePaths: number[]) => void;
+const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) => {
+
+  for (let i = 0; i < imgElements.length; i += 1) {
+    if (imgElements.length === imgPaths.length) {
+      imgElements[i].src = `${imgPaths[i]}`;
+    }
+  }
+};

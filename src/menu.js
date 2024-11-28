@@ -1,4 +1,3 @@
-import dinosaur from "../asset/images/dinosaur.png";
 import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType } from "./utils";
 // Create concrete classes for each type of menu Order
 class Beverage {
@@ -26,7 +25,6 @@ class Beverage {
         DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
         IMAGE.setAttribute("class", `${this.name}`);
-        IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
         appendChildNodes(INFO_CONTAINER, INFO_ORDER_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;
@@ -56,7 +54,6 @@ class MainDish {
         INFO_Order_NAME.textContent = `${this.name}`;
         DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
-        IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
         appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;
@@ -86,7 +83,6 @@ class SideDish {
         INFO_Order_NAME.textContent = `${this.name}`;
         DESCRIPTION_TEXT.textContent = `${this.description}`;
         INFO_PRICE.textContent = `$${this.price}`;
-        IMAGE.src = `${dinosaur}`;
         appendChildNodes(INFO_DESCRIPTION, DESCRIPTION_TEXT);
         appendChildNodes(INFO_CONTAINER, INFO_Order_NAME, INFO_DESCRIPTION, INFO_PRICE, IMAGE);
         return INFO_CONTAINER;

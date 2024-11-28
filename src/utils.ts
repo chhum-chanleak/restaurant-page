@@ -78,6 +78,29 @@ export const getOrdersByType = <Type extends MenuOrder>(arrayOfObjects: Type[]) 
   };
 };
 
+
+// Get img elements by inputting order type. Example: getImgElementsByOrderType("side_dish");
+type GetImgElementsByOrderType = (orderType: string) => NodeListOf<Element>;
+export const getImgElementsByOrderType: GetImgElementsByOrderType = (orderType) => {
+  const BEVERAGE_IMG_ELEMENTS = document.querySelectorAll(".beverage-container img");
+  const SIDE_DISHES_IMG_ELEMENTS = document.querySelectorAll(".side-dishes-container img");
+  const MAIN_DISHES_IMG_ELEMENTS = document.querySelectorAll(".main-dishes-container img");
+
+  switch (orderType) {
+    case 'beverage':
+      return BEVERAGE_IMG_ELEMENTS;
+      break;
+    case 'side_dishes':
+      return SIDE_DISHES_IMG_ELEMENTS;
+      break;
+    case 'main_dishes':
+      return MAIN_DISHES_IMG_ELEMENTS;
+      break;
+    default:
+      throw new Error(`Unknown order type ${orderType}`);
+  }
+};
+
 // Add images to elements
 type AddImagesToElements = (imgElements: HTMLImageElement[], imagePaths: number[]) => void;
 const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) => {

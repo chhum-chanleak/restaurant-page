@@ -54,6 +54,24 @@ export const getOrdersByType = (arrayOfObjects) => {
         MAIN_DISHES,
     };
 };
+export const getImgElementsByOrderType = (orderType) => {
+    const BEVERAGE_IMG_ELEMENTS = document.querySelectorAll(".beverage-container img");
+    const SIDE_DISHES_IMG_ELEMENTS = document.querySelectorAll(".side-dishes-container img");
+    const MAIN_DISHES_IMG_ELEMENTS = document.querySelectorAll(".main-dishes-container img");
+    switch (orderType) {
+        case 'beverage':
+            return BEVERAGE_IMG_ELEMENTS;
+            break;
+        case 'side_dishes':
+            return SIDE_DISHES_IMG_ELEMENTS;
+            break;
+        case 'main_dishes':
+            return MAIN_DISHES_IMG_ELEMENTS;
+            break;
+        default:
+            throw new Error(`Unknown order type ${orderType}`);
+    }
+};
 const addImagesToElements = (imgElements, imgPaths) => {
     for (let i = 0; i < imgElements.length; i += 1) {
         if (imgElements.length === imgPaths.length) {

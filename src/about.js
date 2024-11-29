@@ -1,5 +1,4 @@
-"use strict";
-// Factory pattern
+import { appendChildNodes } from "./utils";
 // Concrete implementation
 class Contact {
     name;
@@ -29,6 +28,7 @@ class Contact {
         POSITION.textContent = `${this.position}`;
         NUMBER.textContent = `${this.number}`;
         E_MAIL.textContent = `${this.e_mail}`;
+        appendChildNodes(INFO_CONTAINER, NAME, POSITION, NUMBER, E_MAIL);
         return INFO_CONTAINER;
     }
 }

@@ -1,3 +1,4 @@
+import { appendChildNodes } from "./utils";
 // Factory pattern
 
 // Contract
@@ -33,8 +34,8 @@ class Contact implements ContactInfo {
     NUMBER.textContent = `${this.number}`;
     E_MAIL.textContent = `${this.e_mail}`;
 
-
-
+    appendChildNodes(INFO_CONTAINER, NAME, POSITION, NUMBER, E_MAIL);
+    
     return INFO_CONTAINER;
   }
 }

@@ -16,6 +16,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
+  & p, span {
+    font-size: clamp(14px, 1rem, 16px);
+  }
 }
 
 header {
@@ -39,26 +43,41 @@ div#content {
 
   & > .home {
     padding: 1rem;
-    display: grid;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 80%;
 
     & > div {
       border: 1px solid rgb(229, 229, 16);
       padding: 1rem;
-      text-align: center;
       border-radius: 4px;
-    }
-
-    & > div:nth-child(odd) {
-      width: clamp(315px, 30vw, 400px);
       margin: 0 auto;
     }
 
-    & > div:nth-child(even) {
+    & > div:nth-child(1) {
+      width: clamp(200x, 10vw, 240px);
+      margin: 0 auto;
+    }
+
+    & > div:nth-child(2) {
+      text-indent: 20px;
+      text-align: justify;
+      width: clamp(315px, 60vw, 600px);
+    }
+
+    & > div:nth-child(3) {
+      text-indent: 20px;
+      text-align: center;
+      width: clamp(315px, 30vw, 400px);
+    }
+
+    & > div:nth-child(4) {
       width: clamp(315px, 60vw, 400px);
       margin: 0 auto;
+      text-align: center;
     }
+
   }
 
   & > .menu {

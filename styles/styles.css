@@ -26,6 +26,11 @@ header {
     justify-content: center;
     gap: 1rem;
   }
+
+  & > nav > button {
+    padding: 1rem;
+    cursor: pointer;
+  }
 }
 
 div#content {

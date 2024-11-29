@@ -1,4 +1,4 @@
-import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType, getImgElementsByOrderType, addImagesToElements } from "./utils";
+import { createMainBanner, appendChildNodes, createOrderTypeBanner, getOrdersByType, getImgElementsByOrderType, addImagesToElements, clearContent } from "./utils";
 import { imagePaths } from "../asset/data/images";
 
 // Define a common interface for all Orders
@@ -123,6 +123,9 @@ export const generateMenuContent: GenerateMenuContent = () => {
   const BEVERAGE_CONTAINER = document.createElement("div");
   const SIDE_DISHES_CONTAINER = document.createElement("div");
   const MAIN_DISHES_CONTAINER = document.createElement("div");
+
+  // Clear old content
+  clearContent();
 
   MENU_CONTAINER.setAttribute("class", "menu");  
   MENU_CONTAINER.appendChild(MAIN_BANNER);

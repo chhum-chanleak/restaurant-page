@@ -19,6 +19,24 @@ class Contact implements ContactInfo {
         Name: ${this.name}, Position: ${this.position}, Number: ${this.number}, E-Mail: ${this.e_mail}
       `;
   }
+
+  public createContactInfo(): HTMLElement {
+    const INFO_CONTAINER = document.createElement("div");
+    const NAME = document.createElement("h2");
+    const POSITION = document.createElement("span");
+    const NUMBER = document.createElement("span");
+    const E_MAIL = document.createElement("span");
+
+    INFO_CONTAINER.setAttribute("class", `${this.name}`);
+    NAME.textContent = `${this.name}`;
+    POSITION.textContent = `${this.position}`;
+    NUMBER.textContent = `${this.number}`;
+    E_MAIL.textContent = `${this.e_mail}`;
+
+
+
+    return INFO_CONTAINER;
+  }
 }
 
 // Factory

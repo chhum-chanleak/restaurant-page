@@ -28,3 +28,7 @@ class ContactFactory {
         return new Contact(name, position, number, e_mail);
     }
 }
+// Contacts
+const MAMA_BEAR = ContactFactory.createContact("Mama Bear", "Cook", "555-555-5554", "totallyRealEmail@notFake.com");
+const PAPA_BEAR = ContactFactory.createContact("Papa Bear", "Manager", "555-555-5555", "totallyRealEmail@notFake.com");
+const BABY_BEAR = ContactFactory.createContact("Baby Bear", "Waiter", "555-555-5556", "totallyRealEmail@notFake.com");

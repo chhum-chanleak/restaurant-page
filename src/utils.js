@@ -74,3 +74,7 @@ export const addImagesToElements = (imgElements, imgPaths) => {
         }
     }
 };
+export const clearContent = () => {
+    const CONTENT = document.querySelector("div#content");
+    CONTENT.replaceChildren();
+};

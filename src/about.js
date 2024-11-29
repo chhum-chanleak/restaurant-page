@@ -1,4 +1,4 @@
-import { appendChildNodes } from "./utils";
+import { appendChildNodes, clearContent, createMainBanner } from "./utils";
 // Concrete implementation
 class Contact {
     name;
@@ -14,8 +14,8 @@ class Contact {
     }
     getInfo() {
         return `
-        Name: ${this.name}, Position: ${this.position}, Number: ${this.number}, E-Mail: ${this.e_mail}
-      `;
+      Name: ${this.name}, Position: ${this.position}, Number: ${this.number}, E-Mail: ${this.e_mail}
+    `;
     }
     createContactInfo() {
         const INFO_CONTAINER = document.createElement("div");
@@ -41,6 +41,15 @@ class ContactFactory {
         return new Contact(name, position, number, e_mail);
     }
 }
+export const generateAboutContent = () => {
+    const CONTENT = document.querySelector("div#content");
+    const ABOUT_CONTAINER = document.createElement("div");
+    ABOUT_CONTAINER.setAttribute("class", "about");
+    // Clear old content
+    clearContent();
+    appendChildNodes(ABOUT_CONTAINER, createMainBanner("About us"), MAMA_BEAR.createContactInfo(), PAPA_BEAR.createContactInfo(), BABY_BEAR.createContactInfo());
+    CONTENT.appendChild(ABOUT_CONTAINER);
+};
 // Contacts
 const MAMA_BEAR = ContactFactory.createContact("Mama Bear", "Cook", "555-555-5554", "totallyRealEmail@notFake.com");
 const PAPA_BEAR = ContactFactory.createContact("Papa Bear", "Manager", "555-555-5555", "totallyRealEmail@notFake.com");

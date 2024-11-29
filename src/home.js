@@ -1,3 +1,4 @@
+import { clearContent } from "./utils";
 export const generateHomeContent = () => {
     const CONTENT = document.querySelector("div#content");
     const CONTAINER = document.createElement("div");
@@ -8,6 +9,8 @@ export const generateHomeContent = () => {
     const CONTAINER_CHILDREN = [
         BANNER, INTRODUCTION, BUSINESS_HOURS, LOCATION,
     ];
+    // Clear old content
+    clearContent();
     CONTAINER.setAttribute("class", "home");
     BANNER.textContent = "Beary's Breakfast Bar";
     INTRODUCTION.textContent = `

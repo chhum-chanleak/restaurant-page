@@ -99,3 +99,11 @@ export const addImagesToElements: AddImagesToElements = (imgElements, imgPaths) 
     }
   }
 };
+
+// Clear content inside div#content
+type ClearContent = () => void;
+export const clearContent: ClearContent = () => {
+  const CONTENT = document.querySelector("div#content") as HTMLDivElement;
+
+  CONTENT.replaceChildren();
+};

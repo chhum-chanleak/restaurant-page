@@ -67,11 +67,12 @@ div#content {
 
     & .main-banner {
       border: 1px solid #000;
-      width: 20%;
+      width: 10%;
       min-width: 100px;
       text-align: center;
       margin: 0 auto;
       margin-bottom: 1rem;
+      font-size: 20px;
     }
 
     & .beverage-container, .side-dishes-container, .main-dishes-container {
@@ -80,7 +81,7 @@ div#content {
       align-items: center;
       padding: 1rem;
       gap: 1rem;
-      border-bottom: 1px dashed #000;
+      border-bottom: 1px dashed rgb(229, 229, 16);
     }
 
     .beverage-container > .banner, .side-dishes-container > .banner, .main-dishes-container > .banner {
@@ -89,7 +90,7 @@ div#content {
     }
 
     & .beverage-info, .side-dishes-info, .main-dishes-info {
-      border: 1px solid #000;
+      border: 1px solid rgb(229, 229, 16);
       display: flex;
       flex-direction: column;
       align-items: center;

@@ -1,4 +1,4 @@
-import { appendChildNodes } from "./utils";
+import { appendChildNodes, clearContent, createMainBanner } from "./utils";
 // Factory pattern
 
 // Contract
@@ -17,9 +17,9 @@ class Contact implements ContactInfo {
   constructor(public name: string, public position: string, public number: string, public e_mail: string) {}
   
   public getInfo(): string {
-      return `
-        Name: ${this.name}, Position: ${this.position}, Number: ${this.number}, E-Mail: ${this.e_mail}
-      `;
+    return `
+      Name: ${this.name}, Position: ${this.position}, Number: ${this.number}, E-Mail: ${this.e_mail}
+    `;
   }
 
   public createContactInfo(): HTMLElement {
@@ -51,6 +51,22 @@ class ContactFactory {
     return new Contact(name, position, number, e_mail);
   }
 }
+
+// Functions
+
+// Generate 'About' content
+type GenerateAboutContent = () => void;
+export const generateAboutContent: GenerateAboutContent = () => {
+  const CONTENT = document.querySelector("div#content") as HTMLElement;
+  const ABOUT_CONTAINER = document.createElement("div");
+
+  ABOUT_CONTAINER.setAttribute("class", "about");
+  // Clear old content
+  clearContent();
+  appendChildNodes(ABOUT_CONTAINER, createMainBanner("About us"), MAMA_BEAR.createContactInfo(), PAPA_BEAR.createContactInfo(), BABY_BEAR.createContactInfo());
+
+  CONTENT.appendChild(ABOUT_CONTAINER);
+};
 
 // Contacts
 const MAMA_BEAR = ContactFactory.createContact("Mama Bear", "Cook", "555-555-5554", "totallyRealEmail@notFake.com");

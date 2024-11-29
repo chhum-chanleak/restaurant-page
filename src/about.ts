@@ -8,6 +8,7 @@ interface ContactInfo {
   number: string;
   e_mail: string;
   getInfo(): string;
+  createContactInfo(): HTMLElement;
 }
 
 // Concrete implementation

@@ -1,3 +1,5 @@
+import { clearContent } from "./utils";
+
 type GenerateHomeContent = () => void;
 export const generateHomeContent: GenerateHomeContent = () => {
   const CONTENT = document.querySelector("div#content") as HTMLElement;
@@ -9,6 +11,9 @@ export const generateHomeContent: GenerateHomeContent = () => {
   const CONTAINER_CHILDREN: HTMLElement[] = [
     BANNER, INTRODUCTION, BUSINESS_HOURS, LOCATION,
   ];
+
+  // Clear old content
+  clearContent();
 
   CONTAINER.setAttribute("class", "home");
   BANNER.textContent = "Beary's Breakfast Bar";

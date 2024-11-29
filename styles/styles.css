@@ -118,4 +118,34 @@ div#content {
       text-indent: 20px;
     }
   }
+
+  & > .about {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80%;
+
+    & > div {
+      border: 1px solid rgb(229, 229, 16);
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 0 auto;
+      width: clamp(300px, 20vw, 340px);
+    }
+
+    & > div.main-banner {
+      width: clamp(100px, 10vw, 160px);
+      text-align: center;
+    }
+
+    & > div:not(.main-banner) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & > div:not(.main-banner) > h2 {
+      margin: 0 auto;
+    }
+  }
 }

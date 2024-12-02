@@ -1,4 +1,3 @@
-import dinosaur from "../asset/images/dinosaur.png";
 import { generateHomeContent } from "./home";
 import { generateMenuContent } from "./menu";
 import "../styles/styles.css";
